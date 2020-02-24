@@ -20,6 +20,18 @@
                 <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
             </div>
             <div class="card-footer">
+                <label style="display: block;" for="passwordLength">Enter your password length</label>
+                <input style="display: block; margin: 0 auto; width: 50%;" type="text" placeholder="Enter a number between 8 and 128..." name="passwordLength" id="myPasswordLength">
+
+                <label for="inputUpperCase">Include Lowercase?</label>
+                <input type="checkbox" name="inputLowerCase" id="inputLowerCase">
+
+                <label for="inputUpperCase">Include Uppercase?</label>
+                <input type="checkbox" name="inputUpperCase" id="inputUpperCase">
+                
+                <label for="inputUpperCase">Include Numbers?</label>
+                <input type="checkbox" name="inputNumbers" id="inputNumbers">
+
                 <button id="generate" class="btn">Generate Password</button>
             </div>
         </div>
