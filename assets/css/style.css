@@ -118,6 +118,21 @@ button[disabled] {
     overflow: hidden;
 }
 
+.passwordInputArea {
+    max-width: 40%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#myPasswordLength {
+    width: 100%;
+}
+
+.passwordInput {
+    display: block;
+    margin-top: 10px;
+}
+
 @media (max-width: 690px) {
     .btn {
         font-size: 1rem;

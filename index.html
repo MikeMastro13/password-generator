@@ -20,25 +20,33 @@
                 <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
             </div>
             <div class="card-footer">
-                <label style="display: block;" for="passwordLength">Enter your password length</label>
-                <input style="display: block; margin: 0 auto; width: 50%;" type="text" placeholder="Enter a number between 8 and 128..." name="passwordLength" id="myPasswordLength">
-
-                <label for="inputLowerCase">Include Lowercase?</label>
-                <input type="checkbox" name="inputLowerCase" id="inputLowerCase">
-
-                <label for="inputUpperCase">Include Uppercase?</label>
-                <input type="checkbox" name="inputUpperCase" id="inputUpperCase">
-                
-                <label for="inputNumbers">Include Numbers?</label>
-                <input type="checkbox" name="inputNumbers" id="inputNumbers">
-
-                <label for="inputSpecials">Include Special Characters?</label>
-                <input type="checkbox" name="inputSpecials" id="inputSpecials">
+                <div class="passwordInputArea">
+                    <div class="passwordInput">
+                        <label for="passwordLength">Enter your password length</label>
+                        <input type="text" placeholder="Enter a number between 8 and 128..." name="passwordLength" id="myPasswordLength">
+                    </div>
+                    <div class="passwordInput">
+                        <label for="inputLowerCase">Include Lowercase?</label>
+                        <input type="checkbox" name="inputLowerCase" id="inputLowerCase">
+                    </div>
+                    <div class="passwordInput">
+                        <label for="inputUpperCase">Include Uppercase?</label>
+                        <input type="checkbox" name="inputUpperCase" id="inputUpperCase">
+                    </div>
+                    <div class="passwordInput">
+                        <label for="inputNumbers">Include Numbers?</label>
+                        <input type="checkbox" name="inputNumbers" id="inputNumbers">
+                    </div>
+                    <div class="passwordInput">
+                        <label for="inputSpecials">Include Special Characters?</label>
+                        <input type="checkbox" name="inputSpecials" id="inputSpecials">
+                    </div>
+                </div>
 
                 <button id="generate" class="btn">Generate Password</button>
             </div>
         </div>
     </div>
-    <script src="assets/js/newscript.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
