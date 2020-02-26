@@ -1,34 +1,35 @@
-//Get the generation button id and create a variable for the password
+//Get the generation button id and create a variable for the password and valid
 var generateBtn = document.querySelector("#generate");
 var generatedPassword = "";
-
-//Store the character information in seperate variables
-var lowerCaseLetterCharacters = "abcdefghijklmnopqrstuvwxyz";
-var upperCaseLetterCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numberCharacters = "0123456789";
-var specialCharacters = "!@#$%^&&*()";
 var validCharacters = "";
 
 //Check character inputs
 var generateLowerCase = document.getElementById("inputLowerCase");
 var generateUpperCase = document.getElementById("inputUpperCase");
 var generateNumbers = document.getElementById("inputNumbers");
-var generateSpecials = document.getElementById("inputSpecials");
+var generateSymbols = document.getElementById("inputSpecials");
 
 //Check if an input for a character is pressed and if it is add to the validCharacters variable
 function generateValidCharacters() {
-    if(generateLowerCase.checked) {
-        validCharacters += lowerCaseLetterCharacters;
-    }
-    if (generateUpperCase.checked) {
-        validCharacters += upperCaseLetterCharacters;
-    }  
-    if (generateNumbers.checked) {
-        validCharacters += numberCharacters;
-    }  
-    if (generateSpecials.checked) {
-        validCharacters += specialCharacters;
-    }
+    var characterObject = [{
+        characters: 'abcdefghijklmnopqrstuvwxyz',
+        checkbox: generateLowerCase.checked
+    }, {
+        characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        checkbox: generateUpperCase.checked
+    }, {
+        characters: '0123456789',
+        checkbox: generateNumbers.checked
+    }, {
+        characters: '!@#$%^&*()?',
+        checkbox: generateSymbols.checked
+    }];
+
+    characterObject.forEach(obj => {
+        if (obj.checkbox === true) {
+            validCharacters = validCharacters + obj.characters;
+        }
+    });
 }
 
 function getRandomFromArray(arr) {
@@ -42,8 +43,7 @@ function addCharFromArray(amountOfChars) {
 }
 
 function generatePassword(length) {
-    // var passwordLength = document.getElementById("myPasswordLength").value;
-    if(generateLowerCase.checked || generateUpperCase.checked || generateNumbers.checked || generateSpecials) {
+    if(generateLowerCase.checked || generateUpperCase.checked || generateNumbers.checked || generateSymbols.checked) {
         generateValidCharacters();
         validCharacters.split();
         addCharFromArray(length);
@@ -59,9 +59,6 @@ function writePassword() {
     validCharacters = "";
     var passwordLength = document.getElementById("myPasswordLength").value;
     parseInt(passwordLength);
-
-    //Check for character specification inputs
-
 
     if(passwordLength >= 8 && passwordLength <= 128) {
         var password = generatePassword(passwordLength);
